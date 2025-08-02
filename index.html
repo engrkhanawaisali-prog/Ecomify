@@ -833,23 +833,33 @@
       }
       showTestimonials();
     });
+<!-- Hidden iframe for Google Sheets form -->
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-      var submitted = false;
+<script>
+  let submitted = false;
+
   document.getElementById("applyForm").addEventListener("submit", function () {
-    if (submitted) {
-      alert("Application submitted successfully!");
-      document.getElementById("applyModal").style.display = "none";
-      submitted = false;
-      document.getElementById("applyForm").reset();
-    }
+    submitted = true;
+
+    // Delay to let Google Sheets process the request
+    setTimeout(() => {
+      if (submitted) {
+        alert("Application submitted successfully!");
+        document.getElementById("applyModal").style.display = "none";
+        document.getElementById("applyForm").reset();
+        submitted = false;
+      }
+    }, 2000);
   });
+
 
   
   </script>
 
 </body>
 </html>
+
 
 
 

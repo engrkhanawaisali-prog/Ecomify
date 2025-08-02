@@ -836,7 +836,6 @@
 <!-- Hidden iframe for Google Sheets form -->
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
-<script>
   let submitted = false;
 
   // Form submit logic with Google Sheets and success message
@@ -854,6 +853,7 @@
     }, 2000);
   });
 
+    
   // Function to close the modal manually (when user clicks X)
   function closeModal() {
     document.getElementById('applyModal').style.display = 'none';
@@ -868,11 +868,13 @@
       closeModal();
     }
   };
+
 </script>
 
 
 </body>
 </html>
+
 
 
 

@@ -833,9 +833,20 @@
       }
       showTestimonials();
     });
-  </script>
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"> </iframe>
+
+     var submitted = false;
+  document.getElementById("applyForm").addEventListener("submit", function () {
+    if (submitted) {
+      alert("Application submitted successfully!");
+      document.getElementById("applyModal").style.display = "none";
+      submitted = false;
+      document.getElementById("applyForm").reset();
+    }
+  });
+
+  </script>
 <script>
   var submitted = false;
   document.getElementById("applyForm").addEventListener("submit", function () {
@@ -884,4 +895,5 @@
 
 </body>
 </html>
+
 

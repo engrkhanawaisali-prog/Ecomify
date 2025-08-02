@@ -833,8 +833,35 @@
       }
       showTestimonials();
     });
+  </script>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  var submitted = false;
+  document.getElementById("applyForm").addEventListener("submit", function () {
+    if (submitted) {
+      alert("Application submitted successfully!");
+      document.getElementById("applyModal").style.display = "none";
+      submitted = false;
+      document.getElementById("applyForm").reset();
+    }
+  });
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
 
+  var submitted = false;
+  document.getElementById("applyForm").addEventListener("submit", function () {
+    submitted = true;
+    setTimeout(() => {
+      if (submitted) {
+        alert("Application submitted successfully!");
+        document.getElementById("applyModal").style.display = "none";
+        document.getElementById("applyForm").reset();
+        submitted = false;
+      }
+    }, 2000); // Wait 2 seconds for Google response
+  });
 
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
@@ -857,4 +884,3 @@
 
 </body>
 </html>
-

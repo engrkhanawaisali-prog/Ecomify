@@ -836,13 +836,16 @@
 <!-- Hidden iframe for Google Sheets form -->
 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
 
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
 <script>
   let submitted = false;
 
+  // Form submit logic with Google Sheets and success message
   document.getElementById("applyForm").addEventListener("submit", function () {
     submitted = true;
 
-    // Delay to let Google Sheets process the request
+    // Delay to give Google Sheets time to process the request
     setTimeout(() => {
       if (submitted) {
         alert("Application submitted successfully!");
@@ -853,12 +856,26 @@
     }, 2000);
   });
 
+  // Function to close the modal manually (when user clicks X)
+  function closeModal() {
+    document.getElementById('applyModal').style.display = 'none';
+    document.getElementById("applyForm").reset();
+    submitted = false; // Cancel any pending success popup
+  }
 
-  
-  </script>
+  // Close modal if user clicks outside the modal content
+  window.onclick = function(event) {
+    const modal = document.getElementById('applyModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+</script>
+
 
 </body>
 </html>
+
 
 
 
